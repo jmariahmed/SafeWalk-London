@@ -2,8 +2,8 @@
 
 ### UAL Creative Computing Institute
 
-**Module:** Computational Practices: Visualisation and Sensing (2025/26)
-**Student:** Jafrin Maria Ahmed
+Computational Practices: Visualisation and Sensing (2025/26)
+Jafrin Maria Ahmed
 
 ---
 

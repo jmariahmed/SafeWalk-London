@@ -144,13 +144,10 @@ Potential future improvements include:
 
 ---
 
-## Repository Links
-
-**GitHub Repository:**
-[Insert Repository URL]
+## Project Link
 
 **Live Application:**
-[Insert Live Site URL]
+https://jmariahmed.github.io/SafeWalk-London/
 
 ---
 

@@ -2,8 +2,10 @@
 
 ### UAL Creative Computing Institute
 
-Computational Practices: Visualisation and Sensing (2025/26)
+Computational Practices: Visualisation and Sensing
 Jafrin Maria Ahmed
+**Live Application:**
+https://jmariahmed.github.io/SafeWalk-London/
 
 ---
 
@@ -141,13 +143,6 @@ Potential future improvements include:
 * Advanced route optimisation
 * Enhanced risk modelling
 * Personalised safety preferences
-
----
-
-## Project Link
-
-**Live Application:**
-https://jmariahmed.github.io/SafeWalk-London/
 
 ---
 

@@ -1,8 +1,8 @@
-# 🛡️ SafeWalk London
+# 🛡️ Computational Practices: Visualisation and Sensing
 
-### UAL Creative Computing Institute
+### SafeWalk London
 
-Computational Practices: Visualisation and Sensing
+Jafrin Maria Ahmed
 **Live Application:**
 https://jmariahmed.github.io/SafeWalk-London/
 

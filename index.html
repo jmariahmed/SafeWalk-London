@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SafeWalk London</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="app-shell">
+
+    <div id="map"></div>
+
+    <header class="brand-bar">
+        <div class="brand-pill">
+            🛡️ SafeWalk London
+        </div>
+        <div class="brand-subtitle">
+            🌤 Walk smarter. Stay safer.
+        </div>
+    </header>
+
+    <main class="overlay-layout">
+
+        <section class="top-stack">
+
+            <section class="route-card glass-card">
+                <div class="card-kicker">Plan Your Journey</div>
+
+                <div class="search-container">
+                    <span class="input-dot blue-dot"></span>
+                    <input
+                        type="text"
+                        id="startLocation"
+                        placeholder="Start location or postcode"
+                    >
+                    <span class="input-icon">⌖</span>
+                    <div id="startDropdown" class="autocomplete-dropdown"></div>
+                </div>
+
+                <div class="search-container">
+                    <span class="input-dot red-dot"></span>
+                    <input
+                        type="text"
+                        id="destination"
+                        placeholder="Destination or postcode"
+                    >
+                    <span class="input-icon">⇅</span>
+                    <div id="destinationDropdown" class="autocomplete-dropdown"></div>
+                </div>
+
+                <div class="journey-buttons">
+                    <button id="routeBtn">
+                        Plan Route
+                    </button>
+
+                    <button id="trackingBtn">
+                        Start Journey
+                    </button>
+                </div>
+
+                <div id="routeStatus" class="route-status">
+                    Ready to plan route.
+                </div>
+            </section>
+
+            <section class="hero-card glass-card">
+                <div class="card-kicker">Current Safety Status</div>
+
+                <div id="currentArea" class="current-area">
+                    📍 London
+                </div>
+
+                <div class="hero-score-row">
+                    <div class="score">84</div>
+
+                    <div class="hero-meta">
+                        <div class="risk low-risk">🟢 Low Risk</div>
+                        <div class="insight">
+                            Lower-than-average crime levels detected in this area.
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </section>
+
+        <section id="summaryStrip" class="summary-strip glass-card">
+            <button id="summaryToggle" class="sheet-handle" aria-label="Collapse or expand summary panel">
+                <span></span>
+            </button>
+
+            <div class="summary-grid">
+                <div class="mini-card">
+                    <span>Current Area</span>
+                    <strong id="currentAreaMini">London</strong>
+                </div>
+
+                <div class="mini-card">
+                    <span>Safety Score</span>
+                    <strong id="safetyScoreMini">84</strong>
+                    <small id="riskMini">Low Risk</small>
+                </div>
+
+                <div class="mini-card">
+                    <span>Incidents Nearby</span>
+                    <strong id="incidentsMini">—</strong>
+                </div>
+
+                <div class="mini-card">
+                    <span>Distance</span>
+                    <strong id="distanceMini">—</strong>
+                </div>
+
+                <div class="mini-card">
+                    <span>Est. Time</span>
+                    <strong id="timeMini">—</strong>
+                </div>
+
+                <div class="mini-card">
+                    <span>Route Safety</span>
+                    <strong id="routeSafety">—</strong>
+                    <small id="routeSafetyText">Waiting</small>
+                </div>
+
+                <div class="mini-card">
+                    <span>Alternative Route</span>
+                    <strong id="alternativeRoute">—</strong>
+                    <small id="alternativeRouteText">Checking</small>
+                </div>
+            </div>
+
+            <div class="summary-footer">
+                <div id="tipMini" class="tip-pill">
+                    Safe travel tips appear here.
+                </div>
+            </div>
+        </section>
+
+        <div class="floating-actions">
+            <button id="locationBtn" class="floating-btn" aria-label="Use my location">📍</button>
+            <button id="shareBtn" class="floating-btn" aria-label="Share location">📤</button>
+            <button id="crimeBtn" class="floating-pill" aria-label="Open crime breakdown">📊 Crime Rates</button>
+            <button id="emergencyBtn" class="floating-pill danger" aria-label="Call 999">🚨 Emergency</button>
+        </div>
+
+        <aside id="crimeDrawer" class="crime-drawer glass-card" aria-hidden="false">
+            <div class="drawer-header">
+                <h3>Crime Breakdown</h3>
+                <button id="closeCrimeDrawer" class="drawer-close" aria-label="Close crime breakdown">×</button>
+            </div>
+
+            <div class="drawer-meta">
+                Incidents in this area
+            </div>
+
+            <div class="drawer-toolbar">
+                <span>Last 30 days</span>
+                <span class="drawer-chip">Police.uk data</span>
+            </div>
+
+            <div id="crimeGrid" class="crime-grid"></div>
+
+            <div class="drawer-chart-wrap">
+                <canvas id="crimeChart"></canvas>
+            </div>
+
+            <div class="drawer-foot">
+                Data from Geoapify + Police.uk
+            </div>
+        </aside>
+
+    </main>
+
+</div>
+
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.css"/>
+<script src="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>

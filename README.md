@@ -1,6 +1,6 @@
-# 🛡️ Computational Practices: Visualisation and Sensing
+# 🛡️ SafeWalk London
 
-### SafeWalk London
+### Computational Practices: Visualisation and Sensing
 
 Jafrin Maria Ahmed
 **Live Application:**
